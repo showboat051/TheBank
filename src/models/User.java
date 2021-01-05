@@ -7,9 +7,25 @@ public class User {
 	  private String firstName; // not null
 	  private String lastName; // not null
 	  private String email; // not null
-	  private Role role;
+	  private String role;
 	  
 	  
+	  
+	  
+	
+	
+	
+	public User(int userId, String username, String password, String firstName, String lastName, String email,
+			String role) {
+		super();
+		this.userId = userId;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.role = role;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -46,11 +62,12 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Role getRole() {
+	public String getRole() {
 		return role;
 	}
-	public void setRole(Role role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
+	
 
 }
