@@ -27,24 +27,25 @@ public class UserHubImpl implements UserHub {
 		System.out.println("connected");
 			stmt = conn.createStatement();
 			set = stmt.executeQuery("select * from bank_users");
-			while(set.next()) {
+			while(set.next() ) {
+				
 				Users.add(new User(
-						set.getInt(1),
-						set.getString(2),
-						set.getString(3),
-						set.getString(4),
-						set.getString(5),
-						set.getString(6),
-						set.getString(7)
+						set.getInt("userId"),
+						set.getString("username"),
+						set.getString("pw"),
+						set.getString("firstname"),
+						set.getString("lastname"),
+						set.getString("email"),
+						set.getString("bank_role")
 						));
-			}
+			} // end of while loop
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		System.out.println("Data received");
 		return Users;
 	}
 
