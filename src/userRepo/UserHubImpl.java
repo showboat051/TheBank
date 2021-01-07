@@ -19,14 +19,14 @@ public class UserHubImpl implements UserHub {
 		Statement stmt = null;
 		ResultSet set = null;
 		try {
-			
+			Class.forName("org.postgresql.Driver");
 		conn = DriverManager.getConnection(
 					"jdbc:postgresql://localhost:5432/postgres",
 					"postgres",
 					"password");
 		System.out.println("connected");
 			stmt = conn.createStatement();
-			set = stmt.executeQuery("select * from user");
+			set = stmt.executeQuery("select * from bank_users");
 			while(set.next()) {
 				Users.add(new User(
 						set.getInt(1),
@@ -40,7 +40,11 @@ public class UserHubImpl implements UserHub {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
 		return Users;
 	}
 
