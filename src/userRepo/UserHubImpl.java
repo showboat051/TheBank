@@ -97,9 +97,41 @@ public class UserHubImpl implements UserHub {
 	} // end of findById()
 	
 	@Override
-	public User findByUserName(String username) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<User> findByUserName(String username) {
+		ArrayList<User> User = new ArrayList();
+		try {
+			Class.forName("org.postgresql.Driver");
+		conn = DriverManager.getConnection(
+					"jdbc:postgresql://localhost:5432/postgres",
+					"postgres",
+					"password");
+		String sql = "select * from bank_users where username = ?";
+		stmt = conn.prepareStatement(sql);
+		
+		stmt.setString(1, username); 
+		
+		set = stmt.executeQuery();
+			while(set.next() ) {
+				
+				User.add(new User(
+						set.getInt("userId"),
+						set.getString("username"),
+						set.getString("pw"),
+						set.getString("firstname"),
+						set.getString("lastname"),
+						set.getString("email"),
+						set.getString("bank_role")
+						));
+			} // end of while loop
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Data received");
+		return User;
+		
 	}
 
 	@Override

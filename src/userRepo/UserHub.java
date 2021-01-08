@@ -8,7 +8,7 @@ public interface UserHub {
 	
 	List<User> findAll() throws ClassNotFoundException;
 	List<User> findById(int id);
-	User findByUserName(String username);
+	List<User> findByUserName(String username);
 	void insert(User user);
 	void delete(User user);
 	void update(User user);
