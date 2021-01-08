@@ -14,7 +14,7 @@ public class User {
 	  
 	
 	
-	
+	// full constructor
 	public User(int userId, String username, String password, String firstName, String lastName, String email,
 			String role) {
 		super();
@@ -27,6 +27,11 @@ public class User {
 		this.role = role;
 	}
 	
+	
+	
+
+
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", firstName="
@@ -133,6 +138,8 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+
+
+
 
 }
