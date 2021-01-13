@@ -68,11 +68,8 @@ public class UserHubImpl implements UserHub {
 		
 		set = stmt.executeQuery();
 		
-		
-	
 			while(set.next() ) {
-				
-				User.add(new User(
+						User.add(new User(
 						set.getInt("userId"),
 						set.getString("username"),
 						set.getString("pw"),
@@ -141,35 +138,7 @@ public class UserHubImpl implements UserHub {
 	}
  // end of findByUserName()
 	
-//	@Override
-//	public boolean insert(User user) {
-//		
-//		try {
-//			Class.forName("org.postgresql.Driver");
-//		conn = DriverManager.getConnection(
-//					"jdbc:postgresql://l ocalhost:5432/postgres",
-//					"postgres",
-//					"password");
-//		String sql = "INSERT into bank_users VALUES (?,?,?,?,?,?,?) ";
-//		stmt = conn.prepareStatement(sql);
-//		
-//		if(stmt.executeUpdate() != null) 
-//			return true;
-//		else 
-//			return false;		
-//			
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//			return false;
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return false;
-//		}
-//		
-//		
-//	} // end of insert()
-
+//
 	
 	@Override
 	public boolean insert(User user) {
@@ -217,10 +186,32 @@ public class UserHubImpl implements UserHub {
 	
 
 	@Override
-	public void delete(User user) {
-		// TODO Auto-generated method stub
+	public boolean delete(User user) {
+
 		
-	}
+		String sql = "update bank_users SET userId=?, username=?, pw=?, firstname=?, lastname=?, email=?, bank_role=?";
+		try {
+			conn = DBconnections.getConnection();
+			stmt =  conn.prepareStatement(sql);
+		set = stmt.executeQuery();
+		
+		
+		
+		
+		if (set == null) {
+			return true;
+		} else
+			return false;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		
+	
+		
+	} // end of delete()
 
 	@Override
 	public boolean update(User user) {
@@ -251,7 +242,7 @@ public class UserHubImpl implements UserHub {
 		}
 		
 		
-	}
+	} // end of update()
 
 
 

@@ -10,15 +10,15 @@
 <h1>Welcome to the Bank!</h1>
 
 <div id="login"> 
-Returning Users Log in Here
-<form action="loginPage" modelAttribute="User">
-	
-	ID: <form:input path="userId" />
-	<br><br>
-	
-	UserName: <form:input path="username" />
-	</form>
-</form>
+Returning Users Log in  <a href = "/login"> Here</a>
+
+<form action = "homepage.jsp" method = "GET">
+         First Name: <input type = "text" name = "firstname">
+         <br />
+         Last Name: <input type = "text" name = "lastname" />
+         <input type = "submit" value = "Submit" />
+      </form>
+
 </div>
 
 </body>
