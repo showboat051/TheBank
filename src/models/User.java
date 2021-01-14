@@ -26,11 +26,15 @@ public class User {
 		this.email = email;
 		this.role = role;
 	}
-	
+//	
 	
 	
 
 
+
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public String toString() {

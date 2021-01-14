@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>NewUser</title>
+</head>
+<body>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
     <%@ page import="java.util.Date" %>
 <!DOCTYPE html>
 <html>
@@ -8,10 +17,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome to the Bank!</h1>
+<h1>Welcome New User. You can sign up here</h1>
 
-<div id="login"> 
-New Users Register  <a href = "http://localhost:8089/TheBank/login"> Here</a>
+<div id="register"> 
 
 <form action = "/login" method = "post">
          First Name: <input type = "text" name = "firstname"/>
@@ -27,5 +35,7 @@ New Users Register  <a href = "http://localhost:8089/TheBank/login"> Here</a>
 
 </div>
 
+</body>
+</html>
 </body>
 </html>

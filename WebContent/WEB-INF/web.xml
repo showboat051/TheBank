@@ -12,7 +12,7 @@ id="WebApp_ID" version="3.1">
       <param-name>contextConfigLocation</param-name>
       <param-value>/WEB-INF/spring-mvc-demo-servlet.xml</param-value>
     </init-param>
-    <load-on-startup>1</load-on-startup>
+    <load-on-startup>1</load-on-startup> 
   </servlet>
   
   <servlet-mapping>
@@ -28,5 +28,10 @@ id="WebApp_ID" version="3.1">
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>NewUserServlet</servlet-name>
+    <url-pattern>/NewUser</url-pattern>
   </servlet-mapping>
 </web-app>

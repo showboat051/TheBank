@@ -10,7 +10,8 @@
 
 
 
-<h1>Hello User!</h1>
+<h1>Hello ${firstname}</h1>
+<h1>Hello ${lastname}</h1>
 
 
 
