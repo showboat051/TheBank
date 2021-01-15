@@ -5,6 +5,11 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 id="WebApp_ID" version="3.1">
   <display-name>spring-mvc-demo</display-name>
 
+  <error-page>
+  	<exception-type>java.lang.Exception</exception-type>
+  	<location>/Error.jsp</location>
+  </error-page>
+  
   <servlet>
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -34,4 +39,5 @@ id="WebApp_ID" version="3.1">
     <servlet-name>NewUserServlet</servlet-name>
     <url-pattern>/NewUser</url-pattern>
   </servlet-mapping>
+  
 </web-app>

@@ -13,7 +13,7 @@
 <div id="login"> 
 New Users Register  <a href = "http://localhost:8089/TheBank/login"> Here</a>
 
-<form action = "/login" method = "post">
+<form action = "<%= request.getContextPath() %>/UserServlet" method = "post">
          First Name: <input type = "text" name = "firstname"/>
          <br />
          Last Name: <input type = "text" name = "lastname" />
