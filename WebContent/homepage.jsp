@@ -11,7 +11,7 @@
 <h1>Welcome to the Bank!</h1>
 
 <div id="login"> 
-New Users Register  <a href = "http://localhost:8089/TheBank/login"> Here</a>
+New Users Register  <a href ="<%=request.getContextPath() %>/home/register" > Here</a>
 
 <form action = "<%= request.getContextPath() %>/UserServlet" method = "post">
          First Name: <input type = "text" name = "firstname"/>

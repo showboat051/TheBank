@@ -17,7 +17,7 @@ import userRepo.UserHubImpl;
 /**
  * Servlet implementation class UserServlet
  */
-@WebServlet("/UserServlet")
+@WebServlet(name = "UserServlet", urlPatterns = "/User")
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserHubImpl UserHubImpl;
@@ -39,8 +39,6 @@ public class UserServlet extends HttpServlet {
 		String action = request.getServletPath();
 		
 		switch (action) {
-		case "/new" :
-				break;
 		case "/register" :
 			registerNewUser(request,response);
 			break;
@@ -64,7 +62,7 @@ public class UserServlet extends HttpServlet {
 	private void showUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<User> showUser = UserHubImpl.findAll();
 		request.setAttribute("showUser", showUser);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("NewUser.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("afterLogin.jsp");
 	}
 	
 	private void registerNewUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -88,26 +86,7 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		userId = Integer.parseInt(request.getParameter("userId"));
-//
-//		String userId = request.getParameter("userId");
-//		String username = request.getParameter("username");
-//		String password= request.getParameter("password");
-//		String firstName = request.getParameter("firstName");
-//		String lastName = request.getParameter("lastName");
-//		String email = request.getParameter("email");
-//		String  role = request.getParameter(" role");
-//		User user = new User();
 //		
-//		
-////		user.setUserId(userId);
-//		user.setUsername(username);
-//		user.setPassword(password);
-//		user.setFirstName(firstName);
-//		user.setLastName(lastName);
-//		user.setEmail(email);
-//		user.setRole(role);
-////		doGet(request, response); 
 		this.doGet(request, response);
 		
 	}
